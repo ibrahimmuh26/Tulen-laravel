@@ -12,7 +12,8 @@
   </head>
   <body>
     <div class="container">
-      <form method="POST" action="{{route('')}}" >
+      <form method="POST" action="{{route('login.confirm')}}" >
+        @csrf
         <img
           class="image-logo"
           src="{{ asset('assets/logo-crowd-market2-1@2x.png') }}"
@@ -21,11 +22,11 @@
 
         <div class="title">Selamat Datang!</div>
         <div class="input-box underline">
-          <input type="text" placeholder="Enter Your Email" required />
+          <input name="login_email" type="text" placeholder="Enter Your Email" required />
           <div class="underline"></div>
         </div>
         <div class="input-box">
-          <input type="password" placeholder="Enter Your Password" required />
+          <input name="login_password" type="password" placeholder="Enter Your Password" required />
           <div class="underline"></div>
         </div>
         <div class="input-box button">

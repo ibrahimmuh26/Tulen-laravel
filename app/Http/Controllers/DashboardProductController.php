@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 
-class LoginController extends Controller
+class DashboardProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +13,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('login.index', [
-            'title' => 'Login'
-
-        ]);
+        //
     }
 
     /**
@@ -39,20 +34,7 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        $email = $request->input('login_email');
         //
-        $user = User::where('email', $email)->first();
-        // dd($user);
-        if (!$user || !Hash::check($request->input("login_password"), $user->password)) {
-            return back()->withErrors([
-                'email' => 'The provided credentials do not match our records.',
-            ]);
-        }else{
-
-            return redirect()->intended();
-            // dd("benar");
-
-        }
     }
 
     /**

@@ -47,7 +47,7 @@ return view('register.index', [
         User::create(['email'=>$email,'password'=>$password,'no_tlp'=>$tlp]);
         // dd($email,$password,$tlp);
 
-    return redirect()->route('login')->with('success', 'Register berhasil, silakan login untuk melanjutkan');
+        return redirect()->route('login')->with('success', 'Register berhasil, silakan login untuk melanjutkan');
 
 
         //
