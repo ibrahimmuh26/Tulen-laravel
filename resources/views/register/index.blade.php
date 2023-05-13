@@ -13,7 +13,8 @@
   </head>
   <body>
     <div class="container">
-      <form action="#">
+    <form method="POST" action="{{ route('register.store') }}">
+        @csrf
         <img
           class="image-logo"
           src="{{ asset('assets/logo-crowd-market2-1@2x.png') }}"
@@ -26,22 +27,22 @@
         </div>
         <p class="title-input">Email</p>
         <div class="input-box underline">
-          <input type="text" placeholder="masukan email" required />
+          <input name="register_email" type="text" placeholder="masukan email" required />
           <div class="underline"></div>
         </div>
         <p class="title-input">Password</p>
         <div class="input-box">
-          <input type="password" placeholder="masukan password" required />
+          <input name="register_password" type="password" placeholder="masukan password" required />
           <div class="underline"></div>
         </div>
         <p class="title-input">Konfirmasi password</p>
         <div class="input-box">
-          <input type="password" placeholder="masukan password lagi" required />
+          <input name="register_password" type="password" placeholder="masukan password lagi" required />
           <div class="underline"></div>
         </div>
         <p class="title-input">No. Telp/HP</p>
         <div class="input-box underline">
-          <input type="text" placeholder="masukan No. Telp/HP" required />
+          <input name="register_telp"  type="text" placeholder="masukan No. Telp/HP" required />
           <div class="underline"></div>
         </div>
         <div class="input-box button">

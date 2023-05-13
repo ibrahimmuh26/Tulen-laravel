@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 class RegisterController extends Controller
 {
     /**
@@ -39,6 +40,16 @@ return view('register.index', [
      */
     public function store(Request $request)
     {
+        $email= $request->input('register_email');
+        $tlp= $request->input('register_telp');
+        $password = Hash::make($request->input('register_password'));
+
+        User::create(['email'=>$email,'password'=>$password,'no_tlp'=>$tlp]);
+        // dd($email,$password,$tlp);
+
+    return redirect()->route('login')->with('success', 'Register berhasil, silakan login untuk melanjutkan');
+
+
         //
     }
 

@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="container">
-      <form action="#">
+      <form method="POST" action="{{route('')}}" >
         <img
           class="image-logo"
           src="{{ asset('assets/logo-crowd-market2-1@2x.png') }}"
