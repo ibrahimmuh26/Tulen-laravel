@@ -50,13 +50,13 @@
 
     <div class="product-card">
       <img
-        src="{{asset('/assets/Untitled.png')}}"
+        src="{{asset('/images/'.$product->image)}}"
         alt="product-image"
         class="product-image"
       />
       <div class="trusted-store">Toko terpercaya</div>
       <h3 class="product-name">
-        Minvacne hj
+        {{$product->name}}
       </h3>
       <div class="star-container">
         <img class="star-image" src="./public/Star 1.png" alt="" />

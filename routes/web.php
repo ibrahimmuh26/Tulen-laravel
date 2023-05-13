@@ -22,7 +22,7 @@ Route::get('/register',[RegisterController::class,'index'])->name('register');
 Route::post('/registerConfirm',[RegisterController::class,'store'])->name('register.store');
 Route::get('/dashboardPorduct',[DashboardProductController::class,'index'])->name('dashboard.product');
 Route::get('/dashboardCreateProdut',[DashboardProductController::class,'create'])->name('dashboard.product.create');
-Route::get('/dashboardStoreProdut',[DashboardProductController::class,'store'])->name('dashboard.product.store');
+Route::post('/dashboardStoreProdut',[DashboardProductController::class,'store'])->name('dashboard.product.store');
 Route::get('/',[productListController::class,'index'])->name('general.product');
 // Route::get('/', function () {
 //     return view('dashboard.admin.index');

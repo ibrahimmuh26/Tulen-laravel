@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Project Add</title>
+  <title>CrowdMarket | Tambah Produk</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -227,12 +227,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Project Add</h1>
+            <h1>Tambah produk</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Project Add</li>
+              <li class="breadcrumb-item active">Tambah produk</li>
             </ol>
           </div>
         </div>
@@ -241,7 +241,9 @@
 
     <!-- Main content -->
     <section class="content">
-      <div class="row">
+    <form method="POST" action="{{route('dashboard.product.store')}}" enctype="multipart/form-data">
+        @csrf
+       <div class="row">
         <div class="col-md-6">
           <div class="card card-primary">
             <div class="card-header">
@@ -255,30 +257,35 @@
             </div>
             <div class="card-body">
               <div class="form-group">
-                <label for="inputName">Project Name</label>
-                <input type="text" id="inputName" class="form-control">
+                <label for="inputName">Nama Produk</label>
+                <input type="text" id="inputName" name="nama" class="form-control">
               </div>
-              <div class="form-group">
+              {{-- <div class="form-group">
                 <label for="inputDescription">Project Description</label>
                 <textarea id="inputDescription" class="form-control" rows="4"></textarea>
-              </div>
+              </div> --}}
               <div class="form-group">
-                <label for="inputStatus">Status</label>
-                <select id="inputStatus" class="form-control custom-select">
-                  <option selected disabled>Select one</option>
-                  <option>On Hold</option>
-                  <option>Canceled</option>
-                  <option>Success</option>
+                <label for="inputStatus">Kategori</label>
+                <select id="inputStatus" name ="kategori" class="form-control custom-select">
+                   @foreach($kategori as $kategor)
+                <option selected disabled>Select one</option>
+                  <option value="{{$kategor->id}}">{{$kategor->name}}</option>
+                   @endforeach 
+                 
                 </select>
               </div>
-              <div class="form-group">
-                <label for="inputClientCompany">Client Company</label>
-                <input type="text" id="inputClientCompany" class="form-control">
+              @error('image')
+                 <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+              <div>
+                <label for="UploudFoto">Uploud Foto Produk</label>
+                <input type="file" name="image" class="form-control">
               </div>
-              <div class="form-group">
-                <label for="inputProjectLeader">Project Leader</label>
-                <input type="text" id="inputProjectLeader" class="form-control">
+              <div>
+                <label for="qtyProduk">Jumlah quantity</label>
+                <input type="text" name="qty" class="form-control">
               </div>
+             
             </div>
             <!-- /.card-body -->
           </div>
@@ -287,7 +294,7 @@
         <div class="col-md-6">
           <div class="card card-secondary">
             <div class="card-header">
-              <h3 class="card-title">Budget</h3>
+              <h3 class="card-title">Biaya</h3>
 
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -297,17 +304,10 @@
             </div>
             <div class="card-body">
               <div class="form-group">
-                <label for="inputEstimatedBudget">Estimated budget</label>
-                <input type="number" id="inputEstimatedBudget" class="form-control">
+                <label for="inputEstimatedBudget">Harga Jual</label>
+                <input type="number" name="harga"  class="form-control">
               </div>
-              <div class="form-group">
-                <label for="inputSpentBudget">Total amount spent</label>
-                <input type="number" id="inputSpentBudget" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="inputEstimatedDuration">Estimated project duration</label>
-                <input type="number" id="inputEstimatedDuration" class="form-control">
-              </div>
+              
             </div>
             <!-- /.card-body -->
           </div>
@@ -317,9 +317,11 @@
       <div class="row">
         <div class="col-12">
           <a href="#" class="btn btn-secondary">Cancel</a>
-          <input type="submit" value="Create new Project" class="btn btn-success float-right">
+          <input type="submit" class="btn btn-success float-right">
         </div>
-      </div>
+      </div> 
+    </form>
+      
     </section>
     <!-- /.content -->
   </div>
@@ -329,7 +331,6 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.2.0
     </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\product;
 use App\Models\company;
+use App\Models\category;
+
 
 use Illuminate\Support\Facades\Auth;
 class DashboardProductController extends Controller
@@ -35,7 +37,9 @@ class DashboardProductController extends Controller
     public function create()
     {
         //
-        return view('dashboard.sales.produk_add.index');
+        $kategori = category::all();
+        // dd($kategori);
+        return view('dashboard.sales.produk_add.index')->with(['kategori'=>$kategori    ]);
 
     }
 
@@ -47,6 +51,20 @@ class DashboardProductController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->input('nama'));
+        $nama= $request->input('nama');
+        $kategori=$request->input('kategori');
+        $qty=$request->input('qty');
+        $harga = $request->input('harga');
+        $request->validate([
+        'image' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        $imageName = time().'.'.$request->image->extension();  
+        $request->image->move(public_path('images'), $imageName);
+        // dd(Auth::User()->id);
+        $company= company::where('User_id',Auth::User()->id)->first();
+        product::create(["name"=>$nama,"company_id"=>$company->id,"category_id"=>$kategori,"qty"=>$qty,"harga"=>$harga,"img"=>$imageName]);
+        return redirect()->route('dashboard.product');
         //
     }
 
