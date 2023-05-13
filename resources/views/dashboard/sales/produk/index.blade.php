@@ -245,18 +245,19 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Projects</h3>
+          <h3 class="card-title">Projects</h3><div class="card-tools">
+          <form method="GET" action="{{route('dashboard.product.create')}}">
+            @csrf
+            <a>Tambah Produk</a>
+            <button type="submit" class="btn btn-tool"  title="Collapse">
+              <i class="fas fa-plus"></i>
+            </button>
+            
+          </form>
+                    </div>
 
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-              <i class="fas fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
         </div>
-        <div class="card-body p-0">
+      <div class="card-body p-0">
           <table class="table table-striped projects">
               <thead>
                   <tr>

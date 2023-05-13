@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\product;
-use App\Models\company;
-
-use Illuminate\Support\Facades\Auth;
-class DashboardProductController extends Controller
+class productListController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,14 +14,10 @@ class DashboardProductController extends Controller
     public function index()
     {
         //
-        $company= company::where("User_id",Auth::User()->id)->first();
-        // dd($company);
-        $products = Product::select('products.id', 'products.name', 'products.harga', 'products.qty', 'categories.name as category_name', 'companies.name as company_name')
-    ->join('categories', 'categories.id', '=', 'products.category_id')
-    ->join('companies', 'companies.id', '=', 'products.company_id')->where('companies.id',$company->id)
-    ->get();
-        // dd($product);
-        return view('dashboard.sales.produk.index')->with(['products'=>$products]);
+
+        $products= product::all();
+        // dd($products);
+        return view('produk_list.general.index')->with(['products'=>$products]);
     }
 
     /**
@@ -35,8 +28,6 @@ class DashboardProductController extends Controller
     public function create()
     {
         //
-        return view('dashboard.sales.produk_add.index');
-
     }
 
     /**

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\dashboardProductController;
+use App\Http\Controllers\productListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,9 @@ Route::post('loginConfirm',[LoginController::class,'store'])->name('login.confir
 Route::get('/register',[RegisterController::class,'index'])->name('register');
 Route::post('/registerConfirm',[RegisterController::class,'store'])->name('register.store');
 Route::get('/dashboardPorduct',[DashboardProductController::class,'index'])->name('dashboard.product');
+Route::get('/dashboardCreateProdut',[DashboardProductController::class,'create'])->name('dashboard.product.create');
 Route::get('/dashboardStoreProdut',[DashboardProductController::class,'store'])->name('dashboard.product.store');
-Route::get('/', function () {
-    return view('dashboard.admin.index');
-});
+Route::get('/',[productListController::class,'index'])->name('general.product');
+// Route::get('/', function () {
+//     return view('dashboard.admin.index');
+// });

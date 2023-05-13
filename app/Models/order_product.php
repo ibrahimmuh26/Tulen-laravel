@@ -13,7 +13,8 @@ class order_product extends Model
     protected $fillable=[
         'product_id',
         'order_id',
-        'qty'
+        'qty',
+        'rating'
     ];
     public function product(){
         return $this->belongsTo('product_id',product::class);

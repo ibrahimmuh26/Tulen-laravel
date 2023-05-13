@@ -23,4 +23,8 @@ class company extends Model
     public function product(){
         return $this->hasMany(product::class);
     }
+
+    public function investor(){
+        return $this->hasMany(investor::class);
+    }
 }
