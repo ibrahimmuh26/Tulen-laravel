@@ -49,7 +49,12 @@ class productListController extends Controller
      */
     public function show($id)
     {
+        $products= product::where('id',$id)->first();
+        dd($products);
+
+        // return view('')
         //
+
     }
 
     /**

@@ -77,6 +77,9 @@ class DashboardProductController extends Controller
     public function show($id)
     {
         //
+        $product= product::where('id',$id)->first();
+
+        return view('dashboard.sales.produk_detail.index')->with(['product'=>$product]);
     }
 
     /**

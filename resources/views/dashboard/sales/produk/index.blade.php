@@ -191,24 +191,7 @@
                   <p>List Produk</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="pages/examples/project-add.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p> Tambah Porduk</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/project-edit.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Edit Produk</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/project-detail.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Detail Produk</p>
-                </a>
-              </li>
+             
              
             </ul>
           </li>
@@ -309,7 +292,7 @@
                             {{$product->category_name}}
                           </a>                      </td>
                       <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
+                          <a class="btn btn-primary btn-sm" href="{{route('dashboard.product.show'.['product'=>$product->id])}}">
                               <i class="fas fa-info-circle">
                               </i>
                               

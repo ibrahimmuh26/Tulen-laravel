@@ -46,11 +46,13 @@
       </div>
     </nav>
     <div class ="grid">
+      
        @foreach($products as $product)
-
-    <div class="product-card">
-      <img
-        src="{{asset('/images/'.$product->image)}}"
+    
+    {{-- <div class="product-card"> --}}
+      <a class="product-card" href="{{route("general.product.show",["$product->id"])}}">
+        <img
+        src="{{asset('/images/'.$product->img)}}"
         alt="product-image"
         class="product-image"
       />
@@ -62,14 +64,18 @@
         <img class="star-image" src="./public/Star 1.png" alt="" />
         <p class="product-description">4,6 (1rb Terjual)</p>
       </div>
-      <p class="harga">Rp 50.000</p>
+      <p class="harga">Rp {{format_rupiah($product->harga)}}</p>
       <div class="product-description">Didanai oleh</div>
       <div class="pendana">
           <div class="pendana-image"></div>
           <div class="pendana-image"></div>
           <div class="pendana-image"></div>
       </div>
-    </div>
+        
+        
+    </a>
+      
+    {{-- </div> --}}
     @endforeach
     </div>
    

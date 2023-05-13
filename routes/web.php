@@ -21,9 +21,13 @@ Route::post('loginConfirm',[LoginController::class,'store'])->name('login.confir
 Route::get('/register',[RegisterController::class,'index'])->name('register');
 Route::post('/registerConfirm',[RegisterController::class,'store'])->name('register.store');
 Route::get('/dashboardPorduct',[DashboardProductController::class,'index'])->name('dashboard.product');
-Route::get('/dashboardCreateProdut',[DashboardProductController::class,'create'])->name('dashboard.product.create');
-Route::post('/dashboardStoreProdut',[DashboardProductController::class,'store'])->name('dashboard.product.store');
+Route::get('/dashboardCreateProduct',[DashboardProductController::class,'create'])->name('dashboard.product.create');
+Route::post('/dashboardStoreProduct',[DashboardProductController::class,'store'])->name('dashboard.product.store');
+Route::get('/dashboardShowProduct/{id}',[DashboardProductController::class,'show'])->name('dashboard.product.show');
+Route::post('/dashboardUpdateProduct/{id}',[DashboardProductController::class,'update'])->name('dashboard.product.update');
 Route::get('/',[productListController::class,'index'])->name('general.product');
+Route::get('/{id}',[productListController::class,'show'])->name('general.product.show');
+
 // Route::get('/', function () {
 //     return view('dashboard.admin.index');
 // });
