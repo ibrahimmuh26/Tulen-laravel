@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->ForeignId('category_id');
-            $table->string('string');
             $table->string('qty');
             $table->string('harga');
             $table->timestamps();

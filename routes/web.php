@@ -19,5 +19,5 @@ Route::get('/register',[RegisterController::class,'index'])->name('register');
 Route::post('/registerConfirm',[RegisterController::class,'store'])->name('register.store');
 Route::get('/dashboardPorduct',[dashboardPorduct::class,'index'])->name('dashboard.product');
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard.admin.index');
 });
