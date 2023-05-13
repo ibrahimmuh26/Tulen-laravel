@@ -90,12 +90,8 @@
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
       <img src="{{asset('/assets/logo-crowd-market2-1@2x.png')}}" alt="AdminLTE Logo" class=" ">
-
-    <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
@@ -107,16 +103,9 @@
 
      <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          
-         
-          
-         
-         
-       
         
-          <li class="nav-header">EXAMPLES</li>
+        
+          <li class="nav-header">Produk</li>
          
           
          
@@ -125,71 +114,37 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                Pages
+                Produk
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
+              
               <li class="nav-item">
-                <a href="pages/examples/invoice.html" class="nav-link">
+                <a href="{{route('dashboard.product')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Invoice</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Profile</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/e-commerce.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>E-commerce</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/projects.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Projects</p>
+                  <p>List Produk</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/examples/project-add.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Project Add</p>
+                  <p> Tambah Porduk</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/examples/project-edit.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Project Edit</p>
+                  <p>Edit Produk</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/examples/project-detail.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Project Detail</p>
+                  <p>Detail Produk</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="pages/examples/contacts.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Contacts</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/faq.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>FAQ</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/contact-us.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Contact us</p>
-                </a>
-              </li>
+             
             </ul>
           </li>
          
@@ -265,9 +220,7 @@
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <!-- ./col -->
           <div class="col-lg-3 col-6">
-            <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
                 <h3>65</h3>

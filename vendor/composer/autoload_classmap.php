@@ -29,6 +29,7 @@ return array(
     'App\\Models\\order' => $baseDir . '/app/Models/order.php',
     'App\\Models\\order_product' => $baseDir . '/app/Models/order_product.php',
     'App\\Models\\product' => $baseDir . '/app/Models/product.php',
+    'App\\Models\\role' => $baseDir . '/app/Models/role.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',

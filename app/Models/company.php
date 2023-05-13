@@ -19,4 +19,8 @@ class company extends Model
     public function user(){
         return $this->belongsTo('User_id',User::class);
     }
+
+    public function product(){
+        return $this->hasMany(product::class);
+    }
 }

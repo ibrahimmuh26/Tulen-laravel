@@ -44,7 +44,7 @@ return view('register.index', [
         $tlp= $request->input('register_telp');
         $password = Hash::make($request->input('register_password'));
 
-        User::create(['email'=>$email,'password'=>$password,'no_tlp'=>$tlp]);
+        User::create(['email'=>$email,'password'=>$password,'no_telp'=>$tlp]);
         // dd($email,$password,$tlp);
 
         return redirect()->route('login')->with('success', 'Register berhasil, silakan login untuk melanjutkan');
