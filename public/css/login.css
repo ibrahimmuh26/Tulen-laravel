@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html,
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100%;
+  place-items: center;
+  background: linear-gradient(to bottom, #31af99 50%, #f5f4f7 50%);
+}
+::selection {
+  background: #ff80bf;
+}
+.container {
+  align-items: center;
+  background: #fff;
+  max-width: 410px;
+  width: 100%;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+.container .image-logo {
+    margin-top: 15px;
+    align-items: center;
+    height: 35px;
+  }
+  
+
+.container form .title {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 20px 0 10px 0;
+  position: relative;
+}
+.container form .title:before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 33px;
+  left: 0px;
+  bottom: 3px;
+  border-radius: 5px;
+  background: #31AF99;
+}
+.container form .input-box {
+  width: 100%;
+  height: 45px;
+  margin-top: 25px;
+  position: relative;
+}
+.container form .input-box input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-size: 16px;
+  border: none;
+}
+.container form .underline::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #ccc;
+  left: 0;
+  bottom: 0;
+}
+.container form .underline::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #31AF99;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.3s ease;
+}
+.container form .input-box input:focus ~ .underline::after,
+.container form .input-box input:valid ~ .underline::after {
+    
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.container form .button {
+  margin: 40px 0 20px 0;
+}
+.container .input-box input[type="submit"] {
+  background: #31AF99;
+  font-size: 17px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.container .option {
+    padding-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.daftar {
+    color: #31AF99;
+    text-decoration: none;
+}
+

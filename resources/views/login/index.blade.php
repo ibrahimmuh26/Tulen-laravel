@@ -4,8 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>CrowdMarket</title>
-    <link rel="stylesheet" href="login1.css" />
-    <link
+<link rel="stylesheet" type="text/css" href="{{ asset('css/login.css') }}">    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
@@ -16,7 +15,7 @@
       <form action="#">
         <img
           class="image-logo"
-          src="./public/logo-crowd-market2-1@2x.png"
+          src="{{ asset('assets/logo-crowd-market2-1@2x.png') }}"
           alt=""
         />
 
@@ -33,7 +32,7 @@
           <input type="submit" name="" value="Continue" />
         </div>
       </form>
-      <div class="option">Belum punya akun? <a class="daftar" href="">daftar</a></div>
+      <div class="option">Belum punya akun? <a class="daftar" href="{{ url('/register') }}">daftar</a></div>
     </div>
   </body>
 </html>
