@@ -50,9 +50,9 @@ class productListController extends Controller
     public function show($id)
     {
         $products= product::where('id',$id)->first();
-        dd($products);
+        // dd($products);
 
-        // return view('')
+        return view('produk_list.produk_co.index')->with(['products'=>$products]);
         //
 
     }
@@ -63,8 +63,13 @@ class productListController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request,$id)
     {
+         $products= product::where('id',$id)->first();
+         $qty= $request->input('quantity');
+        // dd($qty);
+
+        return view('produk_list.produk_proses.index')->with(['products'=>$products,'qty'=>$qty]);
         //
     }
 

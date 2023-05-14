@@ -27,6 +27,8 @@ Route::get('/dashboardShowProduct/{id}',[DashboardProductController::class,'show
 Route::post('/dashboardUpdateProduct/{id}',[DashboardProductController::class,'update'])->name('dashboard.product.update');
 Route::get('/',[productListController::class,'index'])->name('general.product');
 Route::get('/{id}',[productListController::class,'show'])->name('general.product.show');
+Route::post('/co/{id}',[productListController::class,'edit'])->name('general.product.edit');
+Route::post('/co_proses/{id}',[productListController::class,'update'])->name('general.product.update');
 
 // Route::get('/', function () {
 //     return view('dashboard.admin.index');

@@ -292,7 +292,7 @@
                             {{$product->category_name}}
                           </a>                      </td>
                       <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="{{route('dashboard.product.show'.['product'=>$product->id])}}">
+                          <a class="btn btn-primary btn-sm" href="{{url('/dashboardShowProduct/' .$product->id)}}">
                               <i class="fas fa-info-circle">
                               </i>
                               
