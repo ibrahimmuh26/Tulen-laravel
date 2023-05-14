@@ -51,8 +51,7 @@ class productListController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
+    /**P
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

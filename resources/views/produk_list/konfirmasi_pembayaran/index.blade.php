@@ -11,7 +11,7 @@
     <nav class="navbar">
       <img
         class="logo-app"
-        src="./public/logo-crowd-market2-1@2x.png"
+        src="{{asset('assets/logo-crowd-market2-1@2x.png')}}"
         alt="error"
       />
       <form action="" method="">
@@ -69,8 +69,8 @@
              Rp.{{$order->total}}
             </h3>
             <div class="button-bawah">
-              <button class="nav-button nav-button-custom">Cek status</button>
-              <button class="button-bayar">Belanja Lagi</button>
+              {{-- <button class="nav-button nav-button-custom">Cek status</button> --}}
+              <a href="{{route('general.product')}}"class="button-bayar">Belanja Lagi</a>
             </div>
           </article>
         </div>
