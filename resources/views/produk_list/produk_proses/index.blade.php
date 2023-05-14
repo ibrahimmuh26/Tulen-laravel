@@ -46,7 +46,8 @@
       <div class="breadcrumb">
         <p>Home / Tas Rajut Organik / Buat Pesanan</p>
       </div>
-      <form action="">
+     <form method="POST" action="{{url('/co_proses/'.$products->id)}}">
+        @csrf
         <div id="content">
           <article id="product-qty" class="card">
             <h2 class="section-title">Barang yang dipesan</h2>
@@ -57,7 +58,7 @@
             />
             <h3 class="product-title">Tas Rajut Organik</h3>
             <p class="store-name">Toko Ibu Mur</p>
-            <form id="qtyform" method="" class="quantity" action="#">
+            <div id="qtyform" method="" class="quantity" action="#">
               <input
                 type="button"
                 value="-"
@@ -73,14 +74,14 @@
                 field="quantity"
                 onClick="increaseCount(event, this); calculateTotal();"
               />
-            </form>
+            </div>
           </article>
           <article id="pengiriman" class="card card-alamat">
             <h2 class="alamat-title">Alamat Pengiriman</h2>
             <p class="alamat-section">
               Mohon isi form di bawah untuk alamat pengiriman barang
             </p>
-            <form action="">
+            
               <label for="nama">Nama Penerima</label><br />
               <input
                 type="text"
@@ -110,7 +111,6 @@
                 placeholder="Masukkan Alamat"
                 class="area-alamat"
               ></textarea>
-            </form>
           </article>
         </div>
         <aside>
@@ -143,10 +143,11 @@
                   <td><b id="tagihan">Rp{{($products->harga*$qty)+(($products->harga*$qty)*5/100)}}</b></td>
                 </tr>
               </table>
-              <button class="button-bayar">Bayar Tagihan</button>
+              <button type="submit" class="button-bayar">Bayar Tagihan</button>
             </section>
           </article>
         </aside>
+        
       </form>
     </main>
     <footer>

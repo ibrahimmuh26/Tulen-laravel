@@ -26,8 +26,8 @@ function calculateTotal() {
   const persen = 0.05;
   const totalBayar = parseFloat(document.getElementById("result").textContent);
   const layanan = persen * totalBayar;
-  document.getElementById("layanan").textContent = layanan.toFixed(3);
+  document.getElementById("layanan").textContent = layanan;
 
   const tagihan = totalBayar + layanan;
-  document.getElementById("tagihan").textContent = tagihan.toFixed(3);
+  document.getElementById("tagihan").textContent = tagihan;
 }

@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\product;
 use App\Models\company;
 use App\Models\category;
-
-
 use Illuminate\Support\Facades\Auth;
 class DashboardProductController extends Controller
 {
@@ -20,12 +18,10 @@ class DashboardProductController extends Controller
     {
         //
         $company= company::where("User_id",Auth::User()->id)->first();
-        // dd($company);
         $products = Product::select('products.id', 'products.name', 'products.harga', 'products.qty', 'categories.name as category_name', 'companies.name as company_name')
-    ->join('categories', 'categories.id', '=', 'products.category_id')
-    ->join('companies', 'companies.id', '=', 'products.company_id')->where('companies.id',$company->id)
-    ->get();
-        // dd($product);
+         ->join('categories', 'categories.id', '=', 'products.category_id')
+         ->join('companies', 'companies.id', '=', 'products.company_id')->where('companies.id',$company->id)
+        ->get();
         return view('dashboard.sales.produk.index')->with(['products'=>$products]);
     }
 
@@ -61,9 +57,8 @@ class DashboardProductController extends Controller
         ]);
         $imageName = time().'.'.$request->image->extension();  
         $request->image->move(public_path('images'), $imageName);
-        // dd(Auth::User()->id);
         $company= company::where('User_id',Auth::User()->id)->first();
-        product::create(["name"=>$nama,"company_id"=>$company->id,"category_id"=>$kategori,"qty"=>$qty,"harga"=>$harga,"img"=>$imageName]);
+        product::create(["name"=>$nama,"company_id"=>$company->id,"category_id"=>$kategori,"qty"=>$qty,"harga"=>$harga,"img"=>$imageName,"deskripsi"=>$request->input("deskripsi")]);
         return redirect()->route('dashboard.product');
         //
     }

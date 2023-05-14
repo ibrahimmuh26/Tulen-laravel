@@ -52,12 +52,12 @@
         <div class="foto-produk" style="background-image: url("./public/Untitled.png);"></div>
         <div class="keterangan-produk">
           <div class="trusted-store">Toko terpercaya</div>
-          <h3 class="product-name">Minvacne hj</h3>
+          <h3 class="product-name">{{$products->name}}</h3>
           <div class="star-container">
             <img class="star-image" src="./public/Star 1.png" alt="" />
             <p class="product-description">4,6 (1rb Terjual)</p>
           </div>
-          <p class="harga">Rp<span id="harga-satuan">50.000</span></p>
+          <p class="harga">Rp<span id="harga-satuan">{{$products->harga}}</span></p>
           <div class="product-description">Didanai oleh</div>
           <div class="pendana">
             <div class="pendana-image"></div>
@@ -66,7 +66,7 @@
           </div>
           <div class="container-toko">
             <img class="logo-toko" src="./public/building.png" alt="" />
-            <p class="nama-toko">Toko Ibu Mar</p>
+            <p class="nama-toko">{{$products->company->name}}</p>
             <form action="" method="">
               <form>
                 <input
@@ -79,21 +79,7 @@
           </div>
           <p class="deskripsi">Deskripsi</p>
           <p class="product-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
-            <br /><br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
+                {{$products->deskripsi}}
           </p>
         </div>
       </div>
@@ -118,7 +104,7 @@
             onClick="increaseCount(event, this), calculateTotal();"
           />
         <p class="product-description-padding">Subtotal yang dibayar</p>
-        <p class="harga">Rp<span id="result">50.000</span></p>
+        <p class="harga">Rp<span id="result">0</span></p>
           <button type="submit"  >
             <input class="pesanan-button" type="button" value="Buat pesanan" />
           </button>

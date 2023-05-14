@@ -20,5 +20,5 @@ function calculateTotal() {
   const quantity = parseInt(document.getElementById("qty").value);
   const price = parseFloat(document.getElementById("harga-satuan").textContent);
   const total = quantity * price;
-  document.getElementById("result").textContent = total.toFixed(3);
+  document.getElementById("result").textContent = total;
 }

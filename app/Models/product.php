@@ -28,4 +28,8 @@ class product extends Model
     public function order_product(){
         return $this->hasMany(order_product::class);
     }
+
+    public function company(){
+        return $this->belongsTo(company::class,'company_id');
+    }
 }

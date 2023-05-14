@@ -184,3 +184,7 @@ form {
     background-image: url("../assets/Untitled.png");
     background-size: cover;
   }
+a{
+    text-decoration: none;
+    color: inherit;
+}

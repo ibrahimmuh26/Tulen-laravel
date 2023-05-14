@@ -257,16 +257,21 @@
                  
                 </select>
               </div>
-              @error('image')
-                 <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
+              
               <div>
                 <label for="UploudFoto">Uploud Foto Produk</label>
                 <input type="file" name="image" class="form-control">
               </div>
+              @error('image')
+                 <div class="alert alert-danger">{{ $message }}</div>
+             @enderror
               <div>
                 <label for="qtyProduk">Jumlah quantity</label>
                 <input type="text" name="qty" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputDescription">Deskripsi Produk</label>
+                <textarea name="deskripsi" class="form-control" rows="4"></textarea>
               </div>
              
             </div>
